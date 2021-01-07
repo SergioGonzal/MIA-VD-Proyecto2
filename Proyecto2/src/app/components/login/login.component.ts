@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  correo:string = '';
+  pass:string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  async login(){
+    console.log(this.correo + this.pass);
   }
 
 }
