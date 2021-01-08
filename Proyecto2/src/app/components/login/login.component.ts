@@ -1,4 +1,6 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/servicess/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +9,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  hijos;
+  tipoLogin:string = '';
   correo:string = '';
   pass:string = '';
 
-  constructor() { }
+  constructor(public LoginService: LoginService, private router:Router) { localStorage.setItem('id', 'S;G') }
 
   ngOnInit(): void {
   }
 
   async login(){
-    console.log(this.correo + this.pass);
-  }
+    if (this.tipoLogin == "1") {
+      let respuesta = await this.LoginService.loginPadre(this.correo, this.pass);
+      const obj = JSON.parse(JSON.stringify(respuesta));
+      
+      if (obj[0].auth == true) {
+        localStorage.setItem('id', this.correo);
+        this.router.navigate(['home']);
+      }
 
+    }else if (this.tipoLogin == "2") {
+      let respuesta = await this.LoginService.loginHijo(this.correo, this.pass);
+      const obj = JSON.parse(JSON.stringify(respuesta));
+      
+      if (obj[0].auth == true) {
+        localStorage.setItem('id', this.correo);
+        this.router.navigate(['homeHijo']);
+      }
+      
+    }
+  }
 }

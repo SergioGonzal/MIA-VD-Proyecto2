@@ -8,35 +8,35 @@
             <div style="margin-top: 20px;">
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Nombre</mat-label>
-                    <input matInput placeholder="Padre Ejemplar">
+                    <input matInput placeholder="Padre Ejemplar" [(ngModel)]="nombrePadre">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Correo</mat-label>
-                    <input matInput placeholder="ejemplo@correo.com" type="email">
+                    <input matInput placeholder="ejemplo@correo.com" type="email" [(ngModel)]="email">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Contraseña</mat-label>
-                    <input type="password" matInput>
+                    <input type="password" matInput [(ngModel)]="pass">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Teléfono</mat-label>
-                    <input matInput placeholder="00001111">
+                    <input matInput placeholder="00001111" [(ngModel)]="telefono">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Cantidad de dinero</mat-label>
-                    <input matInput placeholder="Ej. 1000">
+                    <input matInput placeholder="Ej. 1000" [(ngModel)]="dinero">
                 </mat-form-field>
             </div>
 
@@ -47,21 +47,21 @@
             <div style="margin-top: 20px;">
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Departamento</mat-label>
-                    <input matInput placeholder="Ej. Guatemala">
+                    <input matInput placeholder="Ej. Guatemala" [(ngModel)]="departamento">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Minicipio</mat-label>
-                    <input matInput placeholder="Ej. Guatemala">
+                    <input matInput placeholder="Ej. Guatemala" [(ngModel)]="municipio">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Detalle</mat-label>
-                    <input matInput placeholder="Ej. 1-11 zona 1">
+                    <input matInput placeholder="Ej. 1-11 zona 1" [(ngModel)]="detalle">
                 </mat-form-field>
             </div>
         </div>
@@ -72,36 +72,36 @@
             <div style="margin-top: 20px;">
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Nombre</mat-label>
-                    <input matInput placeholder="Hijo Ejemplar">
+                    <input matInput placeholder="Hijo Ejemplar" [(ngModel)]="nombreHijo">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Nickname</mat-label>
-                    <input matInput placeholder="Ej. Abdul">
+                    <input matInput placeholder="Ej. Abdul" [(ngModel)]="nickname">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Fecha de nacimiento</mat-label>
-                    <input matInput placeholder="dd/mm/aaaa">
+                    <input matInput placeholder="dd/mm/aaaa" [(ngModel)]="fecha">
                 </mat-form-field>
             </div>
 
             <div>
                 <mat-form-field style="width: 300px;" color="accent" appearance="fill">
                     <mat-label>Sexo</mat-label>
-                    <mat-select>
-                    <mat-option value="option">Masculino</mat-option>
-                    <mat-option value="option">Femenino</mat-option>
+                    <mat-select [(ngModel)]="sexo">
+                    <mat-option value="Masculino">Masculino</mat-option>
+                    <mat-option value="Femenino">Femenino</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
 
             <div>
-                <button mat-raised-button color="accent">Registrarse</button>
+                <button mat-raised-button color="accent" (click)="crearPadreHijo()">Registrarse</button>
             </div>
         </div>
     </mat-card>
