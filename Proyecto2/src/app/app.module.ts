@@ -22,6 +22,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SingupComponent } from './components/singup/singup.component';
+import { CartasComponent } from './components/cartas/cartas.component';
+import { AgregarHijoComponent } from './components/agregar-hijo/agregar-hijo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { SingupComponent } from './components/singup/singup.component';
     HomeComponent,
     LoginComponent,
     NavbarComponent,
-    SingupComponent
+    SingupComponent,
+    CartasComponent,
+    AgregarHijoComponent
   ],
   imports: [
     BrowserModule,

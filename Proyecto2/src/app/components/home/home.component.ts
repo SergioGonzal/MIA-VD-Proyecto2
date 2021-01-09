@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HijosService } from 'src/app/servicess/hijos.service';
 
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   hijos;
   nombre:string = "";
 
-  constructor(public HijosService:HijosService) { }
+  constructor(public HijosService:HijosService, private router:Router) { }
 
   ngOnInit(): void {
     this.getHijos();
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   async verCartas(){
     localStorage.setItem('hijo', this.nombre);
-    console.log(localStorage.getItem('hijo'));
+    this.router.navigate(['cartas']);
   }
 
 }

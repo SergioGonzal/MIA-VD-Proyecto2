@@ -1,0 +1,22 @@
+<div class="cartasHijos-fondo">
+    <app-navbar></app-navbar>
+
+    <mat-grid-list cols="5">
+        <mat-grid-tile colspan="1" *ngFor="let carta of cartas;">
+            
+            <mat-grid-tile-header>
+                <button mat-mini-fab color="accent">
+                    <mat-icon>delete</mat-icon>
+                </button>
+                <p>Carta: {{carta.id}}</p>
+                <p>Estado: {{carta.estado}}</p>
+                <p>Juguete: {{carta.nombre}}</p>
+                
+                <button mat-raised-button color="accent" (click)="aceptarCarta(carta.id)">Aceptar carta</button>
+
+            </mat-grid-tile-header>
+    
+        </mat-grid-tile>
+        
+    </mat-grid-list>
+</div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { SingupService } from 'src/app/servicess/singup.service';
 
@@ -22,7 +23,7 @@ export class SingupComponent implements OnInit {
   fecha:string = "";
   sexo:string = "";
 
-  constructor(public SingupService: SingupService) { }
+  constructor(public SingupService: SingupService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -30,5 +31,6 @@ export class SingupComponent implements OnInit {
   async crearPadreHijo(){
     let respuesta = await this.SingupService.crearPadreHijo(this.email, this.nombrePadre, this.pass, this.telefono, this.dinero, this.departamento, this.municipio, this.detalle, this.nombreHijo, this.nickname, this.fecha, this.sexo);
     console.log(respuesta);
+    this.router.navigate(['']);
   }
 }
