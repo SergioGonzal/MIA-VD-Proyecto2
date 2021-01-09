@@ -27,6 +27,10 @@ export class LoginComponent implements OnInit {
       if (obj[0].auth == true) {
         localStorage.setItem('id', this.correo);
         this.router.navigate(['home']);
+      }else if (obj[0].auth == false){
+        window.alert("Contraseña incorrecta!");
+      }else {	
+        window.alert("Email incorrecto!");
       }
 
     }else if (this.tipoLogin == "2") {
@@ -36,8 +40,11 @@ export class LoginComponent implements OnInit {
       if (obj[0].auth == true) {
         localStorage.setItem('id', this.correo);
         this.router.navigate(['homeHijo']);
+      }else if (obj[0].auth == false){
+        window.alert("Contraseña incorrecta!");
+      }else {	
+        window.alert("Nickname incorrecto!");
       }
-      
     }
   }
 }

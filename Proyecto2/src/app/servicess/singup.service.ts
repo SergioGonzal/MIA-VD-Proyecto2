@@ -16,6 +16,4 @@ export class SingupService {
 
     return this.httpClient.post(this.url,data).toPromise();
   }
-
-  loginPadre(){}
 }

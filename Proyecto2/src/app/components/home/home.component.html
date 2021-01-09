@@ -1,2 +1,18 @@
 <app-navbar></app-navbar>
-<p>home works!</p>
+<div class="homePadre-fondo">
+    <button mat-raised-button color="accent" (click)="getHijos()">Obtener Hijos</button>
+
+    <div>
+        <mat-form-field style="width: 300px;" color="accent" appearance="fill">
+            <mat-label>Cartas</mat-label>
+            <mat-select [(ngModel)]="nombre">
+                <mat-option *ngFor="let hijo of hijos" value="{{hijo.hijo}}">{{hijo.hijo}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <button mat-raised-button color="accent" (click)="verCartas()">Ver Carta</button>
+    </div>
+
+</div>
