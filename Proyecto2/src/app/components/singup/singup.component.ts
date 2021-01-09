@@ -25,7 +25,6 @@ export class SingupComponent implements OnInit {
   constructor(public SingupService: SingupService) { }
 
   ngOnInit(): void {
-    console.log(localStorage.getItem('id'))
   }
 
   async crearPadreHijo(){
